@@ -15,8 +15,8 @@ q-btn(
   color='grey-10',
   icon='my_location',
   style='position: absolute; right: 1.25em; bottom: 2.5em; z-index: 1'
-) 
-</template> 
+)
+</template>
 
 <script>
 import { mapState, mapActions, mapGetters } from 'vuex'
@@ -118,7 +118,7 @@ export default {
     },
 
     /*********************
-          CRIMES API 
+          CRIMES API
     **********************/
     /* Return an array containing the dates of last 3 months since the uk.police API was updated */
     async fetchDates() {
@@ -258,7 +258,7 @@ export default {
           infoWindow.setContent(
             `<div class="row nowrap"><div class="col"> ${this.getPlaceImage(place.photos)} </div>
             <div class="col-7"> <p class="text-subtitle2">${place.name}</p>
-            <p class="text-weight-light">${place.vicinity}</p> <p>${place.rating} ⭐</p></div></div>`
+            <p class="text-weight-light">${place.vicinity}</p> <p>${place.rating.toFixed(1)} ⭐</p></div></div>`
           )
           infoWindow.open(this.map, marker)
         })
